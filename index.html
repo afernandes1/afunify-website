@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="afunify connects AI, communications, CRM and business systems to automate customer and operational workflows.">
+  <meta name="theme-color" content="#1937f5">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="afunify — AI automation &amp; systems integration">
+  <meta property="og:description" content="AI automation and systems integration that turn customer interactions and business data into useful action.">
+  <meta property="og:url" content="https://afunify.com/">
+  <link rel="canonical" href="https://afunify.com/">
+  <title>afunify — AI automation &amp; systems integration</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%231937f5'/%3E%3Ctext x='12' y='43' font-family='Arial' font-size='35' font-weight='700' fill='white'%3Eaf%3C/text%3E%3Crect x='42' y='46' width='11' height='4' fill='%23d9ff00'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --blue: #1937f5;
+      --blue-dark: #1026b8;
+      --lime: #d9ff00;
+      --ink: #11131a;
+      --muted: #61687a;
+      --line: #dfe3ee;
+      --surface: #f5f7fb;
+      --white: #ffffff;
+      --radius: 22px;
+      --shadow: 0 20px 55px rgba(17, 19, 26, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--lime);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(223, 227, 238, 0.8);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 5px;
+      color: var(--blue);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -1.4px;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .brand::after {
+      content: "";
+      width: 17px;
+      height: 4px;
+      margin-bottom: 2px;
+      background: var(--lime);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+
+    .lang-switch button {
+      min-width: 38px;
+      padding: 5px 8px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .lang-switch button.active {
+      color: var(--white);
+      background: var(--blue);
+    }
+
+    .nav-links a {
+      color: #343947;
+      font-size: 14px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-links .nav-cta {
+      padding: 10px 16px;
+      color: var(--white);
+      border-radius: 999px;
+      background: var(--blue);
+    }
+
+    .nav-links .nav-cta:hover {
+      color: var(--white);
+      background: var(--blue-dark);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 92px 0 76px;
+      background:
+        radial-gradient(circle at 92% 10%, rgba(217, 255, 0, 0.18), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      right: -130px;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(25, 55, 245, 0.14);
+      border-radius: 50%;
+      box-shadow: 0 0 0 46px rgba(25, 55, 245, 0.035), 0 0 0 92px rgba(25, 55, 245, 0.025);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
+      align-items: center;
+      gap: 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 4px;
+      background: var(--lime);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(46px, 6vw, 76px);
+      line-height: 0.99;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-copy > p {
+      max-width: 650px;
+      margin-bottom: 32px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 21px);
+      line-height: 1.55;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 21px;
+      border: 1px solid var(--blue);
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--white); background: var(--blue); }
+    .button-primary:hover { background: var(--blue-dark); }
+    .button-secondary { color: var(--blue); background: transparent; }
+    .button-secondary:hover { background: rgba(25, 55, 245, 0.06); }
+    .arrow { font-size: 19px; line-height: 1; }
+
+    .workflow-card {
+      position: relative;
+      padding: 28px;
+      border: 1px solid rgba(25, 55, 245, 0.14);
+      border-radius: 30px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .workflow-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .workflow-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #184d30;
+      background: #e8f8ee;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .live-pill::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #25a55a;
+    }
+
+    .flow {
+      display: grid;
+      gap: 10px;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 13px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfcff;
+    }
+
+    .flow-step.highlight {
+      color: var(--white);
+      border-color: var(--blue);
+      background: var(--blue);
+    }
+
+    .flow-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--blue);
+      background: #ebefff;
+      font-weight: 800;
+    }
+
+    .highlight .flow-icon {
+      color: var(--ink);
+      background: var(--lime);
+    }
+
+    .flow-text strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .flow-text span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .highlight .flow-text span { color: rgba(255,255,255,0.74); }
+    .flow-arrow { color: #9ba2b2; font-size: 20px; }
+    .highlight .flow-arrow { color: var(--lime); }
+
+    .proof {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .proof-item {
+      padding: 26px 34px;
+      border-right: 1px solid var(--line);
+    }
+
+    .proof-item:first-child { padding-left: 0; }
+    .proof-item:last-child { border-right: 0; }
+    .proof-item strong { display: block; font-size: 18px; line-height: 1.35; }
+    .proof-item span { color: var(--muted); font-size: 14px; }
+
+    section { padding: 96px 0; }
+    .section-soft { background: var(--surface); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .section-head h2 {
+      margin-bottom: 0;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+    }
+
+    .section-head p {
+      max-width: 600px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .project {
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      border-radius: 30px;
+      background: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .project-copy {
+      padding: 48px;
+      color: var(--white);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 26px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--lime);
+      background: rgba(217, 255, 0, 0.1);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .project-copy h3 {
+      margin-bottom: 17px;
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .project-copy p { color: #bec4d2; font-size: 17px; }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 26px;
+    }
+
+    .tech-list span {
+      padding: 7px 10px;
+      border: 1px solid #3b404e;
+      border-radius: 8px;
+      color: #e9ebf2;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .project-results {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.18);
+    }
+
+    .result {
+      min-height: 225px;
+      padding: 34px;
+      color: var(--white);
+      background: var(--blue);
+    }
+
+    .result:nth-child(2), .result:nth-child(3) { background: #2441f1; }
+    .result:nth-child(4) { color: var(--ink); background: var(--lime); }
+
+    .result-index {
+      display: block;
+      margin-bottom: 28px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      opacity: 0.65;
+    }
+
+    .result strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .result p {
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .result:nth-child(4) p { color: rgba(17,19,26,0.68); }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      border-color: rgba(25,55,245,0.35);
+      box-shadow: 0 18px 36px rgba(17,19,26,0.08);
+    }
+
+    .service-number {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 58px;
+      border-radius: 13px;
+      color: var(--blue);
+      background: #eef1ff;
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .service h3 {
+      margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+
+    .service p { margin: 0; color: var(--muted); }
+
+    .connection {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .connection h2 {
+      margin-bottom: 20px;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+    }
+
+    .connection-copy p { color: var(--muted); font-size: 18px; }
+
+    .system-map {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--white);
+    }
+
+    .system-node {
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 23px;
+      border-radius: 18px;
+      background: var(--surface);
+    }
+
+    .system-node.core { color: var(--white); background: var(--blue); }
+    .system-node .node-tag { font-size: 12px; font-weight: 800; letter-spacing: 0.07em; opacity: 0.68; text-transform: uppercase; }
+    .system-node strong { font-size: 20px; line-height: 1.25; }
+
+    .about-card {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      overflow: hidden;
+      border-radius: 30px;
+      background: var(--blue);
+    }
+
+    .about-mark {
+      min-height: 440px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 44px;
+      color: var(--ink);
+      background: var(--lime);
+    }
+
+    .about-mark span {
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .about-mark strong {
+      max-width: 360px;
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .about-copy {
+      padding: 52px;
+      color: var(--white);
+    }
+
+    .about-copy h2 {
+      margin-bottom: 24px;
+      font-size: clamp(36px, 4vw, 50px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .about-copy p {
+      max-width: 660px;
+      color: rgba(255,255,255,0.78);
+      font-size: 18px;
+    }
+
+    .credential {
+      display: inline-flex;
+      margin-top: 16px;
+      padding: 9px 13px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .contact {
+      padding: 90px 0;
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .contact h2 {
+      max-width: 780px;
+      margin-bottom: 14px;
+      font-size: clamp(40px, 5.5vw, 66px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .contact p { margin: 0; color: #b7bdca; font-size: 18px; }
+    .contact .button { color: var(--ink); border-color: var(--lime); background: var(--lime); }
+    .contact .button:hover { background: #e5ff42; }
+
+    footer {
+      color: #aab0bd;
+      background: var(--ink);
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 0;
+      border-top: 1px solid #2e323d;
+      font-size: 13px;
+    }
+
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: var(--white); }
+
+    @media (max-width: 900px) {
+      .hero { padding-top: 72px; }
+      .hero-grid, .section-head, .connection, .about-card { grid-template-columns: 1fr; }
+      .hero-grid { gap: 52px; }
+      .workflow-card { max-width: 620px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-item, .proof-item:first-child { padding: 20px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:last-child { border-bottom: 0; }
+      .project { grid-template-columns: 1fr; }
+      .services { grid-template-columns: 1fr; }
+      .service { min-height: auto; }
+      .service-number { margin-bottom: 34px; }
+      .about-mark { min-height: 300px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-grid .button { justify-self: start; }
+    }
+
+    @media (max-width: 650px) {
+      .wrap { width: min(100% - 28px, 1160px); }
+      .nav { min-height: 68px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links { gap: 9px; }
+      .nav-links .nav-cta { padding: 9px 14px; }
+      .hero { padding: 62px 0 54px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(44px, 14vw, 62px); }
+      .workflow-card { padding: 18px; border-radius: 22px; }
+      section { padding: 72px 0; }
+      .section-head { gap: 20px; margin-bottom: 34px; }
+      .project-copy, .about-copy { padding: 30px 24px; }
+      .project-results { grid-template-columns: 1fr; }
+      .result { min-height: 180px; padding: 26px; }
+      .system-map { grid-template-columns: 1fr; padding: 14px; }
+      .system-node { min-height: 125px; }
+      .about-mark { min-height: 250px; padding: 30px 24px; }
+      .contact { padding: 72px 0; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="afunify home">afunify</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#work" data-i18n="navWork">Work</a>
+        <a href="#services" data-i18n="navServices">Services</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-language="pt" aria-pressed="false">PT</button>
+          <button type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="nav-cta" href="mailto:afernandes@afunify.com" data-i18n="navContact">Let’s talk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow" data-i18n="heroEyebrow">AI automation + systems integration</div>
+          <h1 data-i18n="heroTitle">Turn conversations and data into useful action.</h1>
+          <p data-i18n="heroBody">afunify connects communications, AI, CRM and the tools your team already uses—so leads, requests, deadlines and follow-up move through one coordinated process.</p>
+          <div class="actions">
+            <a class="button button-primary" data-mail-link href="mailto:afernandes@afunify.com?subject=Let%27s%20discuss%20an%20integration"><span data-i18n="heroCta">Discuss an integration</span> <span class="arrow">→</span></a>
+            <a class="button button-secondary" href="#work" data-i18n="heroSecondary">See the working MVP</a>
+          </div>
+        </div>
+
+        <div class="workflow-card" aria-label="Example integrated voice workflow">
+          <div class="workflow-top">
+            <span class="workflow-label" data-i18n="flowLabel">Integrated workflow</span>
+            <span class="live-pill" data-i18n="flowPill">Working MVP</span>
+          </div>
+          <div class="flow">
+            <div class="flow-step">
+              <div class="flow-icon">01</div>
+              <div class="flow-text"><strong data-i18n="flow1Title">A business signal arrives</strong><span data-i18n="flow1Body">Call, form, email or CRM event</span></div>
+              <span class="flow-arrow">↓</span>
+            </div>
+            <div class="flow-step highlight">
+              <div class="flow-icon">02</div>
+              <div class="flow-text"><strong data-i18n="flow2Title">AI understands and prepares</strong><span data-i18n="flow2Body">Context, intent and next action</span></div>
+              <span class="flow-arrow">↓</span>
+            </div>
+            <div class="flow-step">
+              <div class="flow-icon">03</div>
+              <div class="flow-text"><strong data-i18n="flow3Title">Business system updates</strong><span data-i18n="flow3Body">CRM, email or workflow</span></div>
+              <span class="flow-arrow">✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="proof" aria-label="Current capabilities">
+      <div class="wrap proof-grid">
+        <div class="proof-item"><strong data-i18n="proof1Title">Working Voice AI pilot</strong><span data-i18n="proof1Body">Real calls through a public SIP number</span></div>
+        <div class="proof-item"><strong data-i18n="proof2Title">European Portuguese</strong><span data-i18n="proof2Body">Designed for natural customer conversations</span></div>
+        <div class="proof-item"><strong data-i18n="proof3Title">Integration-first architecture</strong><span data-i18n="proof3Body">Built to connect with APIs and business systems</span></div>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 data-i18n="workTitle">A working product, not just a presentation.</h2>
+          <p data-i18n="workBody">The current Voice AI pilot receives normal telephone calls, identifies known callers, captures structured information and creates an operational follow-up.</p>
+        </div>
+
+        <article class="project">
+          <div class="project-copy">
+            <span class="status" data-i18n="projectStatus">Voice AI MVP</span>
+            <h3 data-i18n="projectTitle">One foundation. Multiple workflows.</h3>
+            <p data-i18n="projectBody">The communication, AI and data foundation stays modular. Each customer activates only the channels, integrations and actions its process needs.</p>
+            <div class="tech-list" aria-label="Technology used">
+              <span>Asterisk</span><span>Python</span><span>OpenAI Realtime</span><span>Docker</span><span>AWS</span><span>Zadarma SIP</span>
+            </div>
+          </div>
+          <div class="project-results">
+            <div class="result">
+              <span class="result-index" data-i18n="result1Tag">01 / IDENTIFY</span>
+              <strong data-i18n="result1Title">Caller context</strong>
+              <p data-i18n="result1Body">Match the caller to customer information and the relevant business process.</p>
+            </div>
+            <div class="result">
+              <span class="result-index" data-i18n="result2Tag">02 / TRIAGE</span>
+              <strong data-i18n="result2Title">Inbound triage</strong>
+              <p data-i18n="result2Body">Understand the reason, urgency and appropriate destination before involving the team.</p>
+            </div>
+            <div class="result">
+              <span class="result-index" data-i18n="result3Tag">03 / CAPTURE</span>
+              <strong data-i18n="result3Title">Service request</strong>
+              <p data-i18n="result3Body">Collect the reason, location, urgency and supporting details in European Portuguese.</p>
+            </div>
+            <div class="result">
+              <span class="result-index" data-i18n="result4Tag">04 / COMPLETE</span>
+              <strong data-i18n="result4Title">Structured follow-up</strong>
+              <p data-i18n="result4Body">Ask for consent, then record the outcome and send an authorised summary and transcript.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="section-soft">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 data-i18n="servicesTitle">Integration work built around the process.</h2>
+          <p data-i18n="servicesBody">The goal is not to replace every system. It is to connect the right ones and remove the manual steps between them.</p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <div class="service-number">01</div>
+            <h3 data-i18n="service1Title">AI customer operations</h3>
+            <p data-i18n="service1Body">Inbound triage, outbound confirmations, website assistants and structured follow-up across customer channels.</p>
+          </article>
+          <article class="service">
+            <div class="service-number">02</div>
+            <h3 data-i18n="service2Title">CRM &amp; workflow automation</h3>
+            <p data-i18n="service2Body">Customer segmentation, campaigns, appointments, tasks, alerts and dashboards connected to operational data.</p>
+          </article>
+          <article class="service">
+            <div class="service-number">03</div>
+            <h3 data-i18n="service3Title">Voice &amp; communications AI</h3>
+            <p data-i18n="service3Body">Inbound and outbound voice, SIP, routing, human handoff, transcription and quality workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap connection">
+        <div class="connection-copy">
+          <div class="eyebrow" data-i18n="connectionEyebrow">Integration first</div>
+          <h2 data-i18n="connectionTitle">Keep the systems that already work.</h2>
+          <p data-i18n="connectionBody">afunify provides the integration layer between the customer conversation and the business action behind it.</p>
+        </div>
+        <div class="system-map" aria-label="afunify integration areas">
+          <div class="system-node"><span class="node-tag" data-i18n="node1Tag">Channels</span><strong data-i18n="node1Title">Voice, web, email or messaging</strong></div>
+          <div class="system-node core"><span class="node-tag">afunify</span><strong data-i18n="node2Title">AI automation workflow</strong></div>
+          <div class="system-node"><span class="node-tag" data-i18n="node3Tag">Business data</span><strong data-i18n="node3Title">CRM, contacts &amp; billing</strong></div>
+          <div class="system-node"><span class="node-tag" data-i18n="node4Tag">Business action</span><strong data-i18n="node4Title">Tasks, documents, alerts &amp; reports</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-soft">
+      <div class="wrap about-card">
+        <div class="about-mark">
+          <span data-i18n="aboutMarkTag">Built by experience</span>
+          <strong data-i18n="aboutMarkTitle">Voice meets software.</strong>
+        </div>
+        <div class="about-copy">
+          <h2>Andre Fernandes</h2>
+          <p data-i18n="aboutBody1">I’m a Voice and Unified Communications engineer with 14 years of experience in enterprise communications. I created afunify to bring that telephony background together with AI, APIs and business-system integration.</p>
+          <p data-i18n="aboutBody2">The focus is simple: build solutions that fit the customer’s existing environment and complete a useful process from end to end.</p>
+          <span class="credential">CCIE Collaboration #62465</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2 data-i18n="contactTitle">Have a business process worth automating?</h2>
+          <p data-i18n="contactBody">Available for pilot projects and integration work.</p>
+        </div>
+        <a class="button" data-mail-link href="mailto:afernandes@afunify.com?subject=afunify%20project%20enquiry">afernandes@afunify.com <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 afunify · Leiria, Portugal</span>
+      <div class="footer-links">
+        <a href="mailto:afernandes@afunify.com">Email</a>
+        <a href="https://www.linkedin.com/in/acfernandes1/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const translations = {
+      en: {
+        pageTitle: "afunify — AI automation & systems integration",
+        pageDescription: "afunify connects AI, communications, CRM and business systems to automate customer and operational workflows.",
+        mailSubject: "Let's discuss an integration",
+        navWork: "Work", navServices: "Services", navAbout: "About", navContact: "Let’s talk",
+        heroEyebrow: "AI automation + systems integration",
+        heroTitle: "Turn conversations and data into useful action.",
+        heroBody: "afunify connects communications, AI, CRM and the tools your team already uses—so leads, requests, deadlines and follow-up move through one coordinated process.",
+        heroCta: "Discuss an integration", heroSecondary: "See the working MVP",
+        flowLabel: "Integrated workflow", flowPill: "Working MVP",
+        flow1Title: "A business signal arrives", flow1Body: "Call, form, email or CRM event",
+        flow2Title: "AI understands and prepares", flow2Body: "Context, intent and next action",
+        flow3Title: "Business system updates", flow3Body: "CRM, email or workflow",
+        proof1Title: "Working Voice AI pilot", proof1Body: "Real calls through a public SIP number",
+        proof2Title: "European Portuguese", proof2Body: "Designed for natural customer conversations",
+        proof3Title: "Integration-first architecture", proof3Body: "Built to connect with APIs and business systems",
+        workTitle: "A working product, not just a presentation.",
+        workBody: "The current Voice AI pilot receives normal telephone calls, identifies known callers, captures structured information and creates an operational follow-up.",
+        projectStatus: "Voice AI MVP", projectTitle: "One foundation. Multiple workflows.",
+        projectBody: "The communication, AI and data foundation stays modular. Each customer activates only the channels, integrations and actions its process needs.",
+        result1Tag: "01 / IDENTIFY", result1Title: "Caller context", result1Body: "Match the caller to customer information and the relevant business process.",
+        result2Tag: "02 / TRIAGE", result2Title: "Inbound triage", result2Body: "Understand the reason, urgency and appropriate destination before involving the team.",
+        result3Tag: "03 / CAPTURE", result3Title: "Service request", result3Body: "Collect the reason, location, urgency and supporting details in European Portuguese.",
+        result4Tag: "04 / COMPLETE", result4Title: "Structured follow-up", result4Body: "Ask for consent, then record the outcome and send an authorised summary and transcript.",
+        servicesTitle: "Integration work built around the process.",
+        servicesBody: "The goal is not to replace every system. It is to connect the right ones and remove the manual steps between them.",
+        service1Title: "AI customer operations", service1Body: "Inbound triage, outbound confirmations, website assistants and structured follow-up across customer channels.",
+        service2Title: "CRM & workflow automation", service2Body: "Customer segmentation, campaigns, appointments, tasks, alerts and dashboards connected to operational data.",
+        service3Title: "Voice & communications AI", service3Body: "Inbound and outbound voice, SIP, routing, human handoff, transcription and quality workflows.",
+        connectionEyebrow: "Integration first", connectionTitle: "Keep the systems that already work.",
+        connectionBody: "afunify provides the integration layer between the customer conversation and the business action behind it.",
+        node1Tag: "Channels", node1Title: "Voice, web, email or messaging", node2Title: "AI automation workflow",
+        node3Tag: "Business data", node3Title: "CRM, contacts & billing", node4Tag: "Business action", node4Title: "Tasks, documents, alerts & reports",
+        aboutMarkTag: "Built by experience", aboutMarkTitle: "Voice meets software.",
+        aboutBody1: "I’m a Voice and Unified Communications engineer with 14 years of experience in enterprise communications. I created afunify to bring that telephony background together with AI, APIs and business-system integration.",
+        aboutBody2: "The focus is simple: build solutions that fit the customer’s existing environment and complete a useful process from end to end.",
+        contactTitle: "Have a business process worth automating?", contactBody: "Available for pilot projects and integration work."
+      },
+      pt: {
+        pageTitle: "afunify — automação com IA e integração de sistemas",
+        pageDescription: "A afunify liga IA, comunicações, CRM e sistemas de negócio para automatizar processos de clientes e operações.",
+        mailSubject: "Vamos falar sobre uma integração",
+        navWork: "Projetos", navServices: "Serviços", navAbout: "Sobre", navContact: "Fale comigo",
+        heroEyebrow: "Automação com IA + integração de sistemas",
+        heroTitle: "Transforme conversas e dados em ações úteis.",
+        heroBody: "A afunify liga comunicações, IA, CRM e as ferramentas que a sua equipa já utiliza—para que leads, pedidos, prazos e seguimentos avancem num processo coordenado.",
+        heroCta: "Falar sobre uma integração", heroSecondary: "Ver o MVP em funcionamento",
+        flowLabel: "Processo integrado", flowPill: "MVP funcional",
+        flow1Title: "Surge um sinal de negócio", flow1Body: "Chamada, formulário, email ou evento no CRM",
+        flow2Title: "A IA compreende e prepara", flow2Body: "Contexto, intenção e próxima ação",
+        flow3Title: "O sistema é atualizado", flow3Body: "CRM, email ou processo",
+        proof1Title: "Piloto funcional de Voice AI", proof1Body: "Chamadas reais através de um número SIP público",
+        proof2Title: "Português europeu", proof2Body: "Pensado para conversas naturais com clientes",
+        proof3Title: "Arquitetura orientada à integração", proof3Body: "Preparada para ligar APIs e sistemas de negócio",
+        workTitle: "Um produto funcional, não apenas uma apresentação.",
+        workBody: "O piloto atual de Voice AI recebe chamadas telefónicas normais, identifica contactos conhecidos, recolhe informação estruturada e cria um seguimento operacional.",
+        projectStatus: "MVP de Voice AI", projectTitle: "Uma fundação. Vários processos.",
+        projectBody: "A fundação de comunicações, IA e dados mantém-se modular. Cada cliente ativa apenas os canais, integrações e ações de que o seu processo necessita.",
+        result1Tag: "01 / IDENTIFICAR", result1Title: "Contexto do cliente", result1Body: "Associa a chamada à informação do cliente e ao processo de negócio relevante.",
+        result2Tag: "02 / TRIAR", result2Title: "Triagem inbound", result2Body: "Compreende o motivo, a urgência e o destino adequado antes de envolver a equipa.",
+        result3Tag: "03 / RECOLHER", result3Title: "Pedido de assistência", result3Body: "Recolhe o motivo, local, urgência e detalhes adicionais em português europeu.",
+        result4Tag: "04 / CONCLUIR", result4Title: "Seguimento estruturado", result4Body: "Solicita consentimento, regista o resultado e envia o resumo e a transcrição autorizados.",
+        servicesTitle: "Integrações construídas à volta do processo.",
+        servicesBody: "O objetivo não é substituir todos os sistemas. É ligar os sistemas certos e eliminar os passos manuais entre eles.",
+        service1Title: "Operações de cliente com IA", service1Body: "Triagem inbound, confirmações outbound, assistentes no site e seguimento estruturado entre canais.",
+        service2Title: "CRM e automação de processos", service2Body: "Segmentação, campanhas, marcações, tarefas, alertas e dashboards ligados aos dados operacionais.",
+        service3Title: "Voice AI e comunicações", service3Body: "Voz inbound e outbound, SIP, encaminhamento, transferência, transcrição e processos de qualidade.",
+        connectionEyebrow: "Integração primeiro", connectionTitle: "Mantenha os sistemas que já funcionam.",
+        connectionBody: "A afunify cria a camada de integração entre a conversa com o cliente e a ação de negócio que acontece depois.",
+        node1Tag: "Canais", node1Title: "Voz, site, email ou mensagens", node2Title: "Processo de automação com IA",
+        node3Tag: "Dados de negócio", node3Title: "CRM, contactos e faturação", node4Tag: "Ação de negócio", node4Title: "Tarefas, documentos, alertas e relatórios",
+        aboutMarkTag: "Experiência aplicada", aboutMarkTitle: "A voz encontra o software.",
+        aboutBody1: "Sou engenheiro de Voz e Comunicações Unificadas, com 14 anos de experiência em comunicações empresariais. Criei a afunify para juntar esta experiência em telefonia à IA, APIs e integração de sistemas de negócio.",
+        aboutBody2: "O foco é simples: criar soluções adaptadas ao ambiente existente do cliente e completar um processo útil do princípio ao fim.",
+        contactTitle: "Tem um processo de negócio que vale a pena automatizar?", contactBody: "Disponível para projetos-piloto e trabalhos de integração."
+      }
+    };
+
+    function setLanguage(language) {
+      const languageCode = translations[language] ? language : "en";
+      const copy = translations[languageCode];
+      document.documentElement.lang = languageCode === "pt" ? "pt-PT" : "en";
+      document.title = copy.pageTitle;
+      document.querySelector('meta[name="description"]').setAttribute("content", copy.pageDescription);
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const value = copy[element.dataset.i18n];
+        if (value) element.textContent = value;
+      });
+      document.querySelectorAll("[data-language]").forEach((button) => {
+        const selected = button.dataset.language === languageCode;
+        button.classList.toggle("active", selected);
+        button.setAttribute("aria-pressed", String(selected));
+      });
+      document.querySelectorAll("[data-mail-link]").forEach((link) => {
+        link.href = `mailto:afernandes@afunify.com?subject=${encodeURIComponent(copy.mailSubject)}`;
+      });
+      try { localStorage.setItem("afunify-language", languageCode); } catch (_) {}
+    }
+
+    document.querySelectorAll("[data-language]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.language));
+    });
+
+    let savedLanguage = null;
+    try { savedLanguage = localStorage.getItem("afunify-language"); } catch (_) {}
+    const browserLanguage = navigator.language && navigator.language.toLowerCase().startsWith("pt") ? "pt" : "en";
+    setLanguage(savedLanguage || browserLanguage);
+  </script>
+</body>
+</html>
