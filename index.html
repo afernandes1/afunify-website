@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="afunify connects AI, communications, CRM and business systems to automate customer and operational workflows.">
   <meta name="theme-color" content="#1937f5">
@@ -709,17 +712,216 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; }
     }
+
+    /* afunify refinement: precise typography, strong contrast and connected steps. */
+    :root { --radius: 16px; --shadow: 0 24px 64px rgba(17,19,26,.08); }
+    body { line-height: 1.65; }
+    ::selection { color: var(--ink); background: var(--lime); }
+    .wrap { width: min(1200px, calc(100% - 64px)); }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+    .workflow-card a:focus-visible, .contact a:focus-visible, footer a:focus-visible { outline-color: var(--lime); }
+    .skip-link { position: fixed; z-index: 100; top: 8px; left: 16px; padding: 12px 20px; color: white; background: var(--blue); transform: translateY(-160%); border-radius: 8px; }
+    .skip-link:focus { transform: translateY(0); }
+    section[id], main[id] { scroll-margin-top: 100px; }
+    .nav { min-height: 88px; gap: 24px; }
+    .brand { font-size: 33px; letter-spacing: -1.8px; }
+    .nav-links { gap: 28px; }
+    .nav-links a { font-size: 14px; }
+    .nav-links .nav-cta { padding: 11px 20px; border-radius: 8px; }
+    .lang-switch { background: transparent; border-radius: 8px; }
+    .lang-switch button { min-height: 36px; min-width: 38px; font-size: 14px; border-radius: 5px; }
+    .hero { padding: 76px 0 80px; background: white; }
+    .hero::before { display: none; }
+    .hero-grid { grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); gap: 56px; align-items: center; }
+    .eyebrow { font-size: 12px; letter-spacing: .11em; line-height: 1.5; margin-bottom: 24px; }
+    .eyebrow::before { width: 20px; height: 3px; flex-shrink: 0; background: var(--blue); }
+    h1 { font-size: clamp(3.25rem,5.8vw,5.1rem); line-height: 1.035; letter-spacing: -.058em; font-weight: 750; margin-bottom: 28px; text-wrap: balance; }
+    .hero-copy > p { font-size: 18px; line-height: 1.75; max-width: 540px; margin-bottom: 34px; }
+    .button { border-radius: 8px; min-height: 52px; font-size: 15px; padding: 14px 20px; }
+    .button-primary { box-shadow: 0 6px 18px rgba(25,55,245,.15); }
+    .button-secondary { border-color: transparent; padding-left: 0; border-radius: 0; text-decoration: underline; text-underline-offset: 5px; }
+    .button-secondary:hover { background: transparent; }
+    .actions { gap: 14px 24px; align-items: center; }
+    .workflow-card { color: white; padding: 32px; border: 0; border-radius: 20px; background: var(--blue); box-shadow: 0 22px 55px rgba(25,55,245,.15); }
+    .workflow-top { gap: 12px; align-items: flex-start; margin-bottom: 44px; }
+    .workflow-label { color: #e4e8ff; font-size: 12px; line-height: 1.6; }
+    .live-pill { background: var(--lime); color: var(--ink); font-size: 12px; line-height: 1.5; padding: 5px 9px; border-radius: 5px; text-align: center; }
+    .live-pill::before { display: none; }
+    .workflow-heading { max-width: 360px; font-size: clamp(1.8rem,2.7vw,2.45rem); line-height: 1.14; letter-spacing: -.035em; font-weight: 650; margin-bottom: 32px; text-wrap: balance; }
+    .flow { gap: 0; }
+    .flow-step { grid-template-columns: 36px minmax(0,1fr) 18px; gap: 12px; padding: 19px 0; border: 0; border-top: 1px solid rgba(255,255,255,.25); border-radius: 0; background: transparent; }
+    .flow-step.highlight { background: transparent; border-color: rgba(255,255,255,.25); }
+    .flow-icon { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.4); border-radius: 50%; font-size: 12px; color: white; background: transparent; }
+    .highlight .flow-icon { border-color: var(--lime); }
+    .flow-text strong { font-size: 15px; line-height: 1.4; font-weight: 650; }
+    .flow-text span, .highlight .flow-text span { font-size: 14px; line-height: 1.45; color: #e0e5ff; margin-top: 5px; }
+    .flow-arrow { color: var(--lime); font-size: 18px; }
+    .proof { background: var(--surface); }
+    .proof-item { padding: 27px 30px; }
+    .proof-item strong { font-size: 16px; font-weight: 650; margin-bottom: 5px; }
+    .proof-item span { font-size: 14px; }
+    section { padding: 104px 0; }
+    .section-head { grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 44px; }
+    .section-head h2, .connection h2 { font-size: clamp(2.25rem,4vw,3.3rem); line-height: 1.1; letter-spacing: -.045em; text-wrap: balance; }
+    .section-head p { font-size: 17px; padding-bottom: 3px; }
+    .project { border-radius: 18px; box-shadow: none; grid-template-columns: .95fr 1.05fr; }
+    .project-copy { padding: 44px; display: flex; flex-direction: column; align-items: flex-start; }
+    .status { font-size: 12px; border-radius: 4px; margin-bottom: 36px; }
+    .project-copy h3 { font-size: clamp(2rem,3.25vw,2.7rem); line-height: 1.12; text-wrap: balance; }
+    .project-copy p { font-size: 16px; color: #c9cdda; }
+    .tech-list { margin-top: auto; padding-top: 24px; }
+    .tech-list span { font-size: 12px; border-radius: 4px; font-weight: 500; padding: 5px 8px; }
+    .project-results { background: #dfe3ee; gap: 1px; }
+    .result { min-height: 220px; padding: 30px; color: var(--ink); background: #f4f6ff; }
+    .result:nth-child(2), .result:nth-child(3) { background: #f4f6ff; }
+    .result:nth-child(4) { background: var(--lime); }
+    .result-index { opacity: 1; color: var(--blue); margin-bottom: 32px; font-size: 12px; }
+    .result:nth-child(4) .result-index { color: var(--ink); }
+    .result strong { font-size: 21px; letter-spacing: -.02em; }
+    .result p { color: #515a70; font-size: 15px; }
+    .result:nth-child(4) p { color: #3e4800; }
+    .services { display: block; border-top: 1px solid var(--line); }
+    .service { display: grid; grid-template-columns: 64px minmax(0,.85fr) minmax(0,1.15fr); gap: 32px; align-items: start; min-height: 0; padding: 36px 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; transition: none; }
+    .service:hover { transform: none; box-shadow: none; border-color: var(--line); }
+    .service-number { width: 42px; height: 42px; margin: 0; border-radius: 50%; color: var(--blue); border: 1px solid #cbd3ff; background: transparent; }
+    .service h3 { margin: 4px 0 0; font-size: clamp(1.4rem,2.4vw,1.8rem); line-height: 1.2; max-width: 300px; }
+    .service p { font-size: 17px; }
+    .connection { grid-template-columns: 1fr 1fr; gap: 80px; }
+    .connection-copy p { font-size: 17px; }
+    .system-map { border-radius: 16px; padding: 10px; gap: 10px; background: var(--surface); }
+    .system-node { min-height: 170px; border: 1px solid var(--line); border-radius: 8px; background: white; padding: 24px; gap: 24px; }
+    .system-node.core { border-color: var(--blue); }
+    .system-node .node-tag { font-size: 12px; opacity: 1; color: var(--muted); }
+    .system-node.core .node-tag { color: #e0e5ff; }
+    .system-node strong { font-size: 19px; letter-spacing: -.02em; }
+    .about-card { border-radius: 18px; grid-template-columns: .8fr 1.2fr; background: white; border: 1px solid var(--line); }
+    .about-mark { padding: 42px; min-height: 380px; gap: 50px; }
+    .about-mark > span { font-size: 12px; line-height: 1.7; }
+    .experience-mark strong { display: block; font-size: clamp(6rem,10vw,9rem); line-height: .9; letter-spacing: -.08em; font-weight: 650; }
+    .experience-mark strong span { font-size: .45em; letter-spacing: -.08em; vertical-align: top; }
+    .experience-mark p { max-width: 230px; margin: 24px 0 0; font-size: 19px; line-height: 1.35; }
+    .about-copy { padding: 48px; color: var(--ink); }
+    .about-copy h2 { font-size: clamp(2rem,3.3vw,2.7rem); }
+    .about-copy p { font-size: 17px; color: var(--muted); }
+    .credential { margin-top: 8px; padding: 9px 0 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; color: var(--blue); font-size: 14px; }
+    .contact { padding: 96px 0 88px; }
+    .contact-grid { grid-template-columns: 1.3fr 1fr; gap: 56px; }
+    .contact h2 { font-size: clamp(2.4rem,4.2vw,3.7rem); line-height: 1.08; text-wrap: balance; }
+    .contact p { margin-top: 24px; max-width: 550px; font-size: 17px; }
+    .contact .button { justify-self: end; font-size: 16px; overflow-wrap: anywhere; }
+    .footer-row { font-size: 14px; padding: 30px 0; }
+    .footer-links a { padding: 8px 0; }
+    @media (min-width: 901px) and (max-width: 1100px) {
+      .hero-grid { gap: 32px; }
+      .workflow-card { padding: 26px; }
+      .nav-links { gap: 18px; }
+      .section-head, .connection { gap: 40px; }
+      .project-copy, .about-copy { padding: 32px; }
+      .result { padding: 24px; }
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero { padding: 56px 0; }
+      .hero-copy { max-width: 690px; }
+      h1 { font-size: clamp(3.1rem,8.6vw,4.9rem); max-width: 730px; }
+      .hero-copy > p { max-width: 640px; }
+      .workflow-card { max-width: none; padding: 30px; }
+      .workflow-top { margin-bottom: 24px; }
+      .workflow-heading { max-width: 550px; font-size: 30px; }
+      .proof-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .proof-item, .proof-item:first-child { padding: 22px 18px; border-bottom: 0; border-right: 1px solid var(--line); }
+      .proof-item:first-child { padding-left: 0; }
+      .proof-item:last-child { border-right: 0; padding-right: 0; }
+      .proof-item strong { font-size: 15px; }
+      .section-head, .connection { grid-template-columns: 1fr; gap: 26px; }
+      .section-head p { max-width: 650px; }
+      .project { grid-template-columns: 1fr; }
+      .project-copy { padding: 36px; }
+      .project-copy h3 { max-width: 480px; }
+      .project-copy p { max-width: 600px; }
+      .tech-list { margin-top: 0; }
+      .service { grid-template-columns: 48px minmax(0,1fr); gap: 16px 24px; }
+      .service h3 { align-self: center; margin: 0; max-width: none; }
+      .service p { grid-column: 2; }
+      .about-card { grid-template-columns: .75fr 1.25fr; }
+      .about-mark { padding: 30px; min-height: auto; }
+      .about-copy { padding: 32px; }
+      .experience-mark strong { font-size: 6rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+      .contact .button { justify-self: start; }
+      section { padding: 76px 0; }
+    }
+    @media (max-width: 650px) {
+      .wrap { width: calc(100% - 40px); }
+      .nav { flex-wrap: wrap; gap: 12px; padding: 15px 0; min-height: 76px; }
+      .brand { font-size: 29px; }
+      .nav-links { gap: 10px; }
+      .nav-links .nav-cta { padding: 10px 12px; font-size: 13px; }
+      .lang-switch button { min-width: 32px; padding: 4px; }
+      h1 { font-size: clamp(2.65rem,10.7vw,4rem); letter-spacing: -.052em; }
+      .hero { padding: 42px 0; }
+      .hero-copy > p { font-size: 17px; line-height: 1.7; }
+      .eyebrow { font-size: 12px; letter-spacing: .065em; }
+      .hero .actions { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .button { font-size: 14px; max-width: 100%; }
+      .workflow-card { padding: 24px 20px; border-radius: 14px; }
+      .workflow-heading { font-size: 29px; }
+      .workflow-label { max-width: 130px; }
+      .flow-step { gap: 10px; grid-template-columns: 30px minmax(0,1fr) 15px; }
+      .flow-icon { width: 29px; height: 29px; }
+      .flow-text strong { font-size: 14px; }
+      .flow-text span { font-size: 14px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-item, .proof-item:first-child, .proof-item:last-child { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:last-child { border-bottom: 0; }
+      section { padding: 60px 0; }
+      .section-head h2, .connection h2 { font-size: 35px; }
+      .section-head { margin-bottom: 32px; gap: 20px; }
+      .project-copy { padding: 28px 24px; }
+      .status { margin-bottom: 24px; }
+      .project-copy h3 { font-size: 32px; }
+      .project-results { grid-template-columns: 1fr; }
+      .result { min-height: auto; padding: 26px 24px; }
+      .result-index { margin-bottom: 16px; }
+      .result p { font-size: 16px; }
+      .service { grid-template-columns: 32px minmax(0,1fr); gap: 14px 18px; padding: 28px 0; }
+      .service-number { width: 30px; height: 30px; font-size: 12px; }
+      .service h3 { font-size: 24px; }
+      .service p { font-size: 16px; }
+      .system-map { grid-template-columns: 1fr; }
+      .system-node { min-height: 130px; padding: 24px; }
+      .about-card { grid-template-columns: 1fr; }
+      .about-mark { padding: 28px 24px; gap: 32px; }
+      .experience-mark { display: flex; align-items: flex-end; gap: 28px; }
+      .experience-mark strong { font-size: 6rem; flex-shrink: 0; }
+      .experience-mark p { font-size: 17px; margin: 0; padding-bottom: 4px; }
+      .about-copy { padding: 32px 24px; }
+      .about-copy h2 { font-size: 34px; }
+      .contact { padding: 60px 0; }
+      .contact h2 { font-size: 38px; }
+      .contact .button { font-size: 14px; padding: 14px; }
+      .footer-row { gap: 12px; }
+    }
+    @media (max-width: 360px) {
+      .wrap { width: calc(100% - 32px); }
+      .nav { justify-content: center; }
+      .nav-links { justify-content: center; }
+      .experience-mark { flex-wrap: wrap; }
+      .contact h2 { font-size: 32px; }
+    }
+
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#top" data-i18n="skipLink">Skip to content</a>
   <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="afunify home">afunify</a>
-      <nav class="nav-links" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="afunify home" data-i18n-aria="homeLabel">afunify</a>
+      <nav class="nav-links" aria-label="Main navigation" data-i18n-aria="navLabel">
         <a href="#work" data-i18n="navWork">Work</a>
         <a href="#services" data-i18n="navServices">Services</a>
         <a href="#about" data-i18n="navAbout">About</a>
-        <div class="lang-switch" role="group" aria-label="Language">
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="languageLabel">
           <button type="button" data-language="pt" aria-pressed="false">PT</button>
           <button type="button" data-language="en" aria-pressed="false">EN</button>
         </div>
@@ -733,61 +935,62 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <div class="eyebrow" data-i18n="heroEyebrow">AI automation + systems integration</div>
-          <h1 data-i18n="heroTitle">Turn conversations and data into useful action.</h1>
-          <p data-i18n="heroBody">afunify connects communications, AI, CRM and the tools your team already uses—so leads, requests, deadlines and follow-up move through one coordinated process.</p>
+          <h1 data-i18n="heroTitle">Connected systems. Less manual work.</h1>
+          <p data-i18n="heroBody">Connect your customer conversations, CRM and everyday tools. afunify builds AI automation that turns requests and information into clear next steps for your team.</p>
           <div class="actions">
-            <a class="button button-primary" data-mail-link href="mailto:afernandes@afunify.com?subject=Let%27s%20discuss%20an%20integration"><span data-i18n="heroCta">Discuss an integration</span> <span class="arrow">→</span></a>
-            <a class="button button-secondary" href="#work" data-i18n="heroSecondary">See the working MVP</a>
+            <a class="button button-primary" data-mail-link href="mailto:afernandes@afunify.com?subject=Let%27s%20discuss%20an%20integration"><span data-i18n="heroCta">Let’s discuss your process</span> <span class="arrow">→</span></a>
+            <a class="button button-secondary" href="#work" data-i18n="heroSecondary">Explore the voice pilot</a>
           </div>
         </div>
 
-        <div class="workflow-card" aria-label="Example integrated voice workflow">
+        <div class="workflow-card" role="group" aria-label="Illustrative integrated workflow" data-i18n-aria="workflowAria">
           <div class="workflow-top">
-            <span class="workflow-label" data-i18n="flowLabel">Integrated workflow</span>
-            <span class="live-pill" data-i18n="flowPill">Working MVP</span>
+            <span class="workflow-label" data-i18n="flowLabel">How it connects</span>
+            <span class="live-pill" data-i18n="flowPill">Example workflow</span>
           </div>
+          <p class="workflow-heading" data-i18n="flowHeading">From first contact to the next step.</p>
           <div class="flow">
             <div class="flow-step">
               <div class="flow-icon">01</div>
-              <div class="flow-text"><strong data-i18n="flow1Title">A business signal arrives</strong><span data-i18n="flow1Body">Call, form, email or CRM event</span></div>
-              <span class="flow-arrow">↓</span>
+              <div class="flow-text"><strong data-i18n="flow1Title">A customer gets in touch</strong><span data-i18n="flow1Body">A call, an email or a request</span></div>
+              <span class="flow-arrow" aria-hidden="true">↓</span>
             </div>
             <div class="flow-step highlight">
               <div class="flow-icon">02</div>
-              <div class="flow-text"><strong data-i18n="flow2Title">AI understands and prepares</strong><span data-i18n="flow2Body">Context, intent and next action</span></div>
-              <span class="flow-arrow">↓</span>
+              <div class="flow-text"><strong data-i18n="flow2Title">afunify connects the context</strong><span data-i18n="flow2Body">Understand the need. Prepare the action.</span></div>
+              <span class="flow-arrow" aria-hidden="true">↓</span>
             </div>
             <div class="flow-step">
               <div class="flow-icon">03</div>
-              <div class="flow-text"><strong data-i18n="flow3Title">Business system updates</strong><span data-i18n="flow3Body">CRM, email or workflow</span></div>
-              <span class="flow-arrow">✓</span>
+              <div class="flow-text"><strong data-i18n="flow3Title">Your team moves forward</strong><span data-i18n="flow3Body">A CRM update, task or follow-up</span></div>
+              <span class="flow-arrow" aria-hidden="true">↳</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="proof" aria-label="Current capabilities">
+    <div class="proof" aria-label="Current capabilities" data-i18n-aria="capabilitiesLabel">
       <div class="wrap proof-grid">
-        <div class="proof-item"><strong data-i18n="proof1Title">Working Voice AI pilot</strong><span data-i18n="proof1Body">Real calls through a public SIP number</span></div>
-        <div class="proof-item"><strong data-i18n="proof2Title">European Portuguese</strong><span data-i18n="proof2Body">Designed for natural customer conversations</span></div>
-        <div class="proof-item"><strong data-i18n="proof3Title">Integration-first architecture</strong><span data-i18n="proof3Body">Built to connect with APIs and business systems</span></div>
+        <div class="proof-item"><strong data-i18n="proof1Title">Working Voice AI pilot</strong><span data-i18n="proof1Body">Real calls. Structured information.</span></div>
+        <div class="proof-item"><strong data-i18n="proof2Title">European Portuguese</strong><span data-i18n="proof2Body">Conversations in your customers’ language.</span></div>
+        <div class="proof-item"><strong data-i18n="proof3Title">Built around your systems</strong><span data-i18n="proof3Body">APIs, business tools and connected workflows.</span></div>
       </div>
     </div>
 
     <section id="work">
       <div class="wrap">
         <div class="section-head">
-          <h2 data-i18n="workTitle">A working product, not just a presentation.</h2>
-          <p data-i18n="workBody">The current Voice AI pilot receives normal telephone calls, identifies known callers, captures structured information and creates an operational follow-up.</p>
+          <div><div class="eyebrow" data-i18n="workEyebrow">01 / In practice</div><h2 data-i18n="workTitle">From a phone call to a clear next step.</h2></div>
+          <p data-i18n="workBody">The working Voice AI pilot answers calls, recognises known contacts and gathers the details your team needs to follow up.</p>
         </div>
 
         <article class="project">
           <div class="project-copy">
             <span class="status" data-i18n="projectStatus">Voice AI MVP</span>
-            <h3 data-i18n="projectTitle">One foundation. Multiple workflows.</h3>
-            <p data-i18n="projectBody">The communication, AI and data foundation stays modular. Each customer activates only the channels, integrations and actions its process needs.</p>
-            <div class="tech-list" aria-label="Technology used">
+            <h3 data-i18n="projectTitle">Your customer calls. The context follows.</h3>
+            <p data-i18n="projectBody">A voice pilot built for everyday service requests: capture what happened, understand the urgency and send a structured summary to the person who can help.</p>
+            <div class="tech-list" aria-label="Technology used" data-i18n-aria="technologyLabel">
               <span>Asterisk</span><span>Python</span><span>OpenAI Realtime</span><span>Docker</span><span>AWS</span><span>Zadarma SIP</span>
             </div>
           </div>
@@ -799,8 +1002,8 @@
             </div>
             <div class="result">
               <span class="result-index" data-i18n="result2Tag">02 / TRIAGE</span>
-              <strong data-i18n="result2Title">Inbound triage</strong>
-              <p data-i18n="result2Body">Understand the reason, urgency and appropriate destination before involving the team.</p>
+              <strong data-i18n="result2Title">Reason and urgency</strong>
+              <p data-i18n="result2Body">Understand why the customer is calling and how urgently they need assistance.</p>
             </div>
             <div class="result">
               <span class="result-index" data-i18n="result3Tag">03 / CAPTURE</span>
@@ -808,9 +1011,9 @@
               <p data-i18n="result3Body">Collect the reason, location, urgency and supporting details in European Portuguese.</p>
             </div>
             <div class="result">
-              <span class="result-index" data-i18n="result4Tag">04 / COMPLETE</span>
+              <span class="result-index" data-i18n="result4Tag">04 / FOLLOW UP</span>
               <strong data-i18n="result4Title">Structured follow-up</strong>
-              <p data-i18n="result4Body">Ask for consent, then record the outcome and send an authorised summary and transcript.</p>
+              <p data-i18n="result4Body">With consent, capture the outcome and email a structured summary and transcript.</p>
             </div>
           </div>
         </article>
@@ -820,24 +1023,24 @@
     <section id="services" class="section-soft">
       <div class="wrap">
         <div class="section-head">
-          <h2 data-i18n="servicesTitle">Integration work built around the process.</h2>
-          <p data-i18n="servicesBody">The goal is not to replace every system. It is to connect the right ones and remove the manual steps between them.</p>
+          <div><div class="eyebrow" data-i18n="servicesEyebrow">02 / Services</div><h2 data-i18n="servicesTitle">Make the handoffs work.</h2></div>
+          <p data-i18n="servicesBody">Practical integration work, shaped around your process and the tools your team already uses.</p>
         </div>
         <div class="services">
           <article class="service">
             <div class="service-number">01</div>
-            <h3 data-i18n="service1Title">AI customer operations</h3>
-            <p data-i18n="service1Body">Inbound triage, outbound confirmations, website assistants and structured follow-up across customer channels.</p>
+            <h3 data-i18n="service1Title">Customer follow-up</h3>
+            <p data-i18n="service1Body">Connect enquiries, appointments and customer communications so your team has a clear next action. Scope a focused workflow around your existing tools.</p>
           </article>
           <article class="service">
             <div class="service-number">02</div>
             <h3 data-i18n="service2Title">CRM &amp; workflow automation</h3>
-            <p data-i18n="service2Body">Customer segmentation, campaigns, appointments, tasks, alerts and dashboards connected to operational data.</p>
+            <p data-i18n="service2Body">Connect customer data, segmentation, reminders and reporting. Reduce repeated data entry and the manual steps between business systems.</p>
           </article>
           <article class="service">
             <div class="service-number">03</div>
-            <h3 data-i18n="service3Title">Voice &amp; communications AI</h3>
-            <p data-i18n="service3Body">Inbound and outbound voice, SIP, routing, human handoff, transcription and quality workflows.</p>
+            <h3 data-i18n="service3Title">Voice AI &amp; communications</h3>
+            <p data-i18n="service3Body">Bring AI into your phone workflows: caller context, request capture, routing and structured summaries, with a clear path to human support.</p>
           </article>
         </div>
       </div>
@@ -846,11 +1049,11 @@
     <section>
       <div class="wrap connection">
         <div class="connection-copy">
-          <div class="eyebrow" data-i18n="connectionEyebrow">Integration first</div>
-          <h2 data-i18n="connectionTitle">Keep the systems that already work.</h2>
-          <p data-i18n="connectionBody">afunify provides the integration layer between the customer conversation and the business action behind it.</p>
+          <div class="eyebrow" data-i18n="connectionEyebrow">03 / Connected by design</div>
+          <h2 data-i18n="connectionTitle">Your tools. Working together.</h2>
+          <p data-i18n="connectionBody">Start with the systems you rely on. Connect the information and actions between them, with AI where it makes the process more useful.</p>
         </div>
-        <div class="system-map" aria-label="afunify integration areas">
+        <div class="system-map" aria-label="afunify integration areas" data-i18n-aria="integrationLabel">
           <div class="system-node"><span class="node-tag" data-i18n="node1Tag">Channels</span><strong data-i18n="node1Title">Voice, web, email or messaging</strong></div>
           <div class="system-node core"><span class="node-tag">afunify</span><strong data-i18n="node2Title">AI automation workflow</strong></div>
           <div class="system-node"><span class="node-tag" data-i18n="node3Tag">Business data</span><strong data-i18n="node3Title">CRM, contacts &amp; billing</strong></div>
@@ -862,13 +1065,13 @@
     <section id="about" class="section-soft">
       <div class="wrap about-card">
         <div class="about-mark">
-          <span data-i18n="aboutMarkTag">Built by experience</span>
-          <strong data-i18n="aboutMarkTitle">Voice meets software.</strong>
+          <span data-i18n="aboutMarkTag">04 / The experience behind afunify</span>
+          <div class="experience-mark"><strong>14<span>+</span></strong><p data-i18n="experienceLabel">years in enterprise communications</p></div>
         </div>
         <div class="about-copy">
-          <h2>Andre Fernandes</h2>
-          <p data-i18n="aboutBody1">I’m a Voice and Unified Communications engineer with 14 years of experience in enterprise communications. I created afunify to bring that telephony background together with AI, APIs and business-system integration.</p>
-          <p data-i18n="aboutBody2">The focus is simple: build solutions that fit the customer’s existing environment and complete a useful process from end to end.</p>
+          <h2>André Fernandes</h2>
+          <p data-i18n="aboutBody1">I’m a Voice and Unified Communications engineer with 14 years of experience in enterprise communications, including contact centre and CRM integrations.</p>
+          <p data-i18n="aboutBody2">I created afunify to bring that experience into AI automation and systems integration. You work directly with me to turn a specific business need into a practical solution.</p>
           <span class="credential">CCIE Collaboration #62465</span>
         </div>
       </div>
@@ -877,8 +1080,8 @@
     <section id="contact" class="contact">
       <div class="wrap contact-grid">
         <div>
-          <h2 data-i18n="contactTitle">Have a business process worth automating?</h2>
-          <p data-i18n="contactBody">Available for pilot projects and integration work.</p>
+          <h2 data-i18n="contactTitle">What would you like to take off your team’s hands?</h2>
+          <p data-i18n="contactBody">Tell me about the process, the tools you use and where the work gets stuck.</p>
         </div>
         <a class="button" data-mail-link href="mailto:afernandes@afunify.com?subject=afunify%20project%20enquiry">afernandes@afunify.com <span class="arrow">→</span></a>
       </div>
@@ -897,80 +1100,104 @@
   <script>
     const translations = {
       en: {
+        experienceLabel: "years in enterprise communications",
+        servicesEyebrow: "02 / Services",
+        workEyebrow: "01 / In practice",
+        flowHeading: "From first contact to the next step.",
+        integrationLabel: "afunify integration areas",
+        technologyLabel: "Technology used",
+        capabilitiesLabel: "Current capabilities",
+        languageLabel: "Language",
+        workflowAria: "Illustrative integrated workflow",
+        homeLabel: "afunify home",
+        navLabel: "Main navigation",
+        skipLink: "Skip to content",
         pageTitle: "afunify — AI automation & systems integration",
         pageDescription: "afunify connects AI, communications, CRM and business systems to automate customer and operational workflows.",
         mailSubject: "Let's discuss an integration",
         navWork: "Work", navServices: "Services", navAbout: "About", navContact: "Let’s talk",
         heroEyebrow: "AI automation + systems integration",
-        heroTitle: "Turn conversations and data into useful action.",
-        heroBody: "afunify connects communications, AI, CRM and the tools your team already uses—so leads, requests, deadlines and follow-up move through one coordinated process.",
-        heroCta: "Discuss an integration", heroSecondary: "See the working MVP",
-        flowLabel: "Integrated workflow", flowPill: "Working MVP",
-        flow1Title: "A business signal arrives", flow1Body: "Call, form, email or CRM event",
-        flow2Title: "AI understands and prepares", flow2Body: "Context, intent and next action",
-        flow3Title: "Business system updates", flow3Body: "CRM, email or workflow",
-        proof1Title: "Working Voice AI pilot", proof1Body: "Real calls through a public SIP number",
-        proof2Title: "European Portuguese", proof2Body: "Designed for natural customer conversations",
-        proof3Title: "Integration-first architecture", proof3Body: "Built to connect with APIs and business systems",
-        workTitle: "A working product, not just a presentation.",
-        workBody: "The current Voice AI pilot receives normal telephone calls, identifies known callers, captures structured information and creates an operational follow-up.",
-        projectStatus: "Voice AI MVP", projectTitle: "One foundation. Multiple workflows.",
-        projectBody: "The communication, AI and data foundation stays modular. Each customer activates only the channels, integrations and actions its process needs.",
+        heroTitle: "Connected systems. Less manual work.",
+        heroBody: "Connect your customer conversations, CRM and everyday tools. afunify builds AI automation that turns requests and information into clear next steps for your team.",
+        heroCta: "Let’s discuss your process", heroSecondary: "Explore the voice pilot",
+        flowLabel: "How it connects", flowPill: "Example workflow",
+        flow1Title: "A customer gets in touch", flow1Body: "A call, an email or a request",
+        flow2Title: "afunify connects the context", flow2Body: "Understand the need. Prepare the action.",
+        flow3Title: "Your team moves forward", flow3Body: "A CRM update, task or follow-up",
+        proof1Title: "Working Voice AI pilot", proof1Body: "Real calls. Structured information.",
+        proof2Title: "European Portuguese", proof2Body: "Conversations in your customers’ language.",
+        proof3Title: "Built around your systems", proof3Body: "APIs, business tools and connected workflows.",
+        workTitle: "From a phone call to a clear next step.",
+        workBody: "The working Voice AI pilot answers calls, recognises known contacts and gathers the details your team needs to follow up.",
+        projectStatus: "Voice AI MVP", projectTitle: "Your customer calls. The context follows.",
+        projectBody: "A voice pilot built for everyday service requests: capture what happened, understand the urgency and send a structured summary to the person who can help.",
         result1Tag: "01 / IDENTIFY", result1Title: "Caller context", result1Body: "Match the caller to customer information and the relevant business process.",
-        result2Tag: "02 / TRIAGE", result2Title: "Inbound triage", result2Body: "Understand the reason, urgency and appropriate destination before involving the team.",
+        result2Tag: "02 / TRIAGE", result2Title: "Reason and urgency", result2Body: "Understand why the customer is calling and how urgently they need assistance.",
         result3Tag: "03 / CAPTURE", result3Title: "Service request", result3Body: "Collect the reason, location, urgency and supporting details in European Portuguese.",
-        result4Tag: "04 / COMPLETE", result4Title: "Structured follow-up", result4Body: "Ask for consent, then record the outcome and send an authorised summary and transcript.",
-        servicesTitle: "Integration work built around the process.",
-        servicesBody: "The goal is not to replace every system. It is to connect the right ones and remove the manual steps between them.",
-        service1Title: "AI customer operations", service1Body: "Inbound triage, outbound confirmations, website assistants and structured follow-up across customer channels.",
-        service2Title: "CRM & workflow automation", service2Body: "Customer segmentation, campaigns, appointments, tasks, alerts and dashboards connected to operational data.",
-        service3Title: "Voice & communications AI", service3Body: "Inbound and outbound voice, SIP, routing, human handoff, transcription and quality workflows.",
-        connectionEyebrow: "Integration first", connectionTitle: "Keep the systems that already work.",
-        connectionBody: "afunify provides the integration layer between the customer conversation and the business action behind it.",
+        result4Tag: "04 / FOLLOW UP", result4Title: "Structured follow-up", result4Body: "With consent, capture the outcome and email a structured summary and transcript.",
+        servicesTitle: "Make the handoffs work.",
+        servicesBody: "Practical integration work, shaped around your process and the tools your team already uses.",
+        service1Title: "Customer follow-up", service1Body: "Connect enquiries, appointments and customer communications so your team has a clear next action. Scope a focused workflow around your existing tools.",
+        service2Title: "CRM & workflow automation", service2Body: "Connect customer data, segmentation, reminders and reporting. Reduce repeated data entry and the manual steps between business systems.",
+        service3Title: "Voice AI & communications", service3Body: "Bring AI into your phone workflows: caller context, request capture, routing and structured summaries, with a clear path to human support.",
+        connectionEyebrow: "03 / Connected by design", connectionTitle: "Your tools. Working together.",
+        connectionBody: "Start with the systems you rely on. Connect the information and actions between them, with AI where it makes the process more useful.",
         node1Tag: "Channels", node1Title: "Voice, web, email or messaging", node2Title: "AI automation workflow",
         node3Tag: "Business data", node3Title: "CRM, contacts & billing", node4Tag: "Business action", node4Title: "Tasks, documents, alerts & reports",
-        aboutMarkTag: "Built by experience", aboutMarkTitle: "Voice meets software.",
-        aboutBody1: "I’m a Voice and Unified Communications engineer with 14 years of experience in enterprise communications. I created afunify to bring that telephony background together with AI, APIs and business-system integration.",
-        aboutBody2: "The focus is simple: build solutions that fit the customer’s existing environment and complete a useful process from end to end.",
-        contactTitle: "Have a business process worth automating?", contactBody: "Available for pilot projects and integration work."
+        aboutMarkTag: "04 / The experience behind afunify", aboutMarkTitle: "Voice meets software.",
+        aboutBody1: "I’m a Voice and Unified Communications engineer with 14 years of experience in enterprise communications, including contact centre and CRM integrations.",
+        aboutBody2: "I created afunify to bring that experience into AI automation and systems integration. You work directly with me to turn a specific business need into a practical solution.",
+        contactTitle: "What would you like to take off your team’s hands?", contactBody: "Tell me about the process, the tools you use and where the work gets stuck."
       },
       pt: {
+        experienceLabel: "anos em comunicações empresariais",
+        servicesEyebrow: "02 / Serviços",
+        workEyebrow: "01 / Na prática",
+        flowHeading: "Do primeiro contacto ao próximo passo.",
+        integrationLabel: "Áreas de integração afunify",
+        technologyLabel: "Tecnologia utilizada",
+        capabilitiesLabel: "Capacidades atuais",
+        languageLabel: "Idioma",
+        workflowAria: "Exemplo de processo integrado",
+        homeLabel: "afunify início",
+        navLabel: "Navegação principal",
+        skipLink: "Saltar para o conteúdo",
         pageTitle: "afunify — automação com IA e integração de sistemas",
         pageDescription: "A afunify liga IA, comunicações, CRM e sistemas de negócio para automatizar processos de clientes e operações.",
         mailSubject: "Vamos falar sobre uma integração",
         navWork: "Projetos", navServices: "Serviços", navAbout: "Sobre", navContact: "Fale comigo",
         heroEyebrow: "Automação com IA + integração de sistemas",
-        heroTitle: "Transforme conversas e dados em ações úteis.",
-        heroBody: "A afunify liga comunicações, IA, CRM e as ferramentas que a sua equipa já utiliza—para que leads, pedidos, prazos e seguimentos avancem num processo coordenado.",
-        heroCta: "Falar sobre uma integração", heroSecondary: "Ver o MVP em funcionamento",
-        flowLabel: "Processo integrado", flowPill: "MVP funcional",
-        flow1Title: "Surge um sinal de negócio", flow1Body: "Chamada, formulário, email ou evento no CRM",
-        flow2Title: "A IA compreende e prepara", flow2Body: "Contexto, intenção e próxima ação",
-        flow3Title: "O sistema é atualizado", flow3Body: "CRM, email ou processo",
-        proof1Title: "Piloto funcional de Voice AI", proof1Body: "Chamadas reais através de um número SIP público",
-        proof2Title: "Português europeu", proof2Body: "Pensado para conversas naturais com clientes",
-        proof3Title: "Arquitetura orientada à integração", proof3Body: "Preparada para ligar APIs e sistemas de negócio",
-        workTitle: "Um produto funcional, não apenas uma apresentação.",
-        workBody: "O piloto atual de Voice AI recebe chamadas telefónicas normais, identifica contactos conhecidos, recolhe informação estruturada e cria um seguimento operacional.",
-        projectStatus: "MVP de Voice AI", projectTitle: "Uma fundação. Vários processos.",
-        projectBody: "A fundação de comunicações, IA e dados mantém-se modular. Cada cliente ativa apenas os canais, integrações e ações de que o seu processo necessita.",
+        heroTitle: "Sistemas ligados. Menos trabalho manual.",
+        heroBody: "Ligue as conversas com os seus clientes, o CRM e as ferramentas do dia a dia. A afunify cria automações com IA que transformam pedidos e informação em próximos passos claros para a sua equipa.",
+        heroCta: "Vamos falar do seu processo", heroSecondary: "Conhecer o piloto de voz",
+        flowLabel: "Como tudo se liga", flowPill: "Exemplo de processo",
+        flow1Title: "O cliente entra em contacto", flow1Body: "Uma chamada, um email ou um pedido",
+        flow2Title: "A afunify liga o contexto", flow2Body: "Compreender a necessidade. Preparar a ação.",
+        flow3Title: "A sua equipa avança", flow3Body: "Atualização no CRM, tarefa ou seguimento",
+        proof1Title: "Piloto funcional de Voice AI", proof1Body: "Chamadas reais. Informação estruturada.",
+        proof2Title: "Português europeu", proof2Body: "Conversas na língua dos seus clientes.",
+        proof3Title: "Ligado aos seus sistemas", proof3Body: "APIs, ferramentas e processos integrados.",
+        workTitle: "De uma chamada ao próximo passo.",
+        workBody: "O piloto funcional de Voice AI atende chamadas, reconhece contactos conhecidos e recolhe os detalhes de que a equipa precisa para dar seguimento.",
+        projectStatus: "MVP de Voice AI", projectTitle: "O cliente liga. O contexto acompanha.",
+        projectBody: "Um piloto de voz pensado para pedidos de assistência do dia a dia: recolher o que aconteceu, perceber a urgência e enviar um resumo estruturado a quem pode ajudar.",
         result1Tag: "01 / IDENTIFICAR", result1Title: "Contexto do cliente", result1Body: "Associa a chamada à informação do cliente e ao processo de negócio relevante.",
-        result2Tag: "02 / TRIAR", result2Title: "Triagem inbound", result2Body: "Compreende o motivo, a urgência e o destino adequado antes de envolver a equipa.",
+        result2Tag: "02 / TRIAR", result2Title: "Motivo e urgência", result2Body: "Compreende o motivo da chamada e a urgência com que o cliente precisa de assistência.",
         result3Tag: "03 / RECOLHER", result3Title: "Pedido de assistência", result3Body: "Recolhe o motivo, local, urgência e detalhes adicionais em português europeu.",
-        result4Tag: "04 / CONCLUIR", result4Title: "Seguimento estruturado", result4Body: "Solicita consentimento, regista o resultado e envia o resumo e a transcrição autorizados.",
-        servicesTitle: "Integrações construídas à volta do processo.",
-        servicesBody: "O objetivo não é substituir todos os sistemas. É ligar os sistemas certos e eliminar os passos manuais entre eles.",
-        service1Title: "Operações de cliente com IA", service1Body: "Triagem inbound, confirmações outbound, assistentes no site e seguimento estruturado entre canais.",
-        service2Title: "CRM e automação de processos", service2Body: "Segmentação, campanhas, marcações, tarefas, alertas e dashboards ligados aos dados operacionais.",
-        service3Title: "Voice AI e comunicações", service3Body: "Voz inbound e outbound, SIP, encaminhamento, transferência, transcrição e processos de qualidade.",
-        connectionEyebrow: "Integração primeiro", connectionTitle: "Mantenha os sistemas que já funcionam.",
-        connectionBody: "A afunify cria a camada de integração entre a conversa com o cliente e a ação de negócio que acontece depois.",
+        result4Tag: "04 / DAR SEGUIMENTO", result4Title: "Seguimento estruturado", result4Body: "Com consentimento, regista o resultado e envia por email um resumo estruturado e a transcrição.",
+        servicesTitle: "Dê continuidade a cada pedido.",
+        servicesBody: "Integrações práticas, adaptadas ao seu processo e às ferramentas que a equipa já utiliza.",
+        service1Title: "Acompanhamento de clientes", service1Body: "Ligue pedidos, marcações e comunicações para que a equipa saiba qual é a próxima ação. Começamos por um processo concreto nas ferramentas que já utiliza.",
+        service2Title: "CRM e automação de processos", service2Body: "Ligue dados de clientes, segmentação, lembretes e relatórios. Reduza a introdução repetida de dados e os passos manuais entre sistemas.",
+        service3Title: "Voice AI e comunicações", service3Body: "Integre IA nos seus processos telefónicos: contexto do cliente, recolha de pedidos, encaminhamento e resumos estruturados, com acesso claro a apoio humano.",
+        connectionEyebrow: "03 / Integração de sistemas", connectionTitle: "As suas ferramentas. A trabalhar em conjunto.",
+        connectionBody: "Comece pelos sistemas em que já confia. Ligue a informação e as ações entre eles, usando IA onde tornar o processo mais útil.",
         node1Tag: "Canais", node1Title: "Voz, site, email ou mensagens", node2Title: "Processo de automação com IA",
         node3Tag: "Dados de negócio", node3Title: "CRM, contactos e faturação", node4Tag: "Ação de negócio", node4Title: "Tarefas, documentos, alertas e relatórios",
-        aboutMarkTag: "Experiência aplicada", aboutMarkTitle: "A voz encontra o software.",
-        aboutBody1: "Sou engenheiro de Voz e Comunicações Unificadas, com 14 anos de experiência em comunicações empresariais. Criei a afunify para juntar esta experiência em telefonia à IA, APIs e integração de sistemas de negócio.",
-        aboutBody2: "O foco é simples: criar soluções adaptadas ao ambiente existente do cliente e completar um processo útil do princípio ao fim.",
-        contactTitle: "Tem um processo de negócio que vale a pena automatizar?", contactBody: "Disponível para projetos-piloto e trabalhos de integração."
+        aboutMarkTag: "04 / A experiência por trás da afunify", aboutMarkTitle: "A voz encontra o software.",
+        aboutBody1: "Sou engenheiro de Voz e Comunicações Unificadas, com 14 anos de experiência em comunicações empresariais, incluindo integrações entre contact centers e CRM.",
+        aboutBody2: "Criei a afunify para aplicar essa experiência à automação com IA e à integração de sistemas. Trabalha diretamente comigo para transformar uma necessidade concreta numa solução prática.",
+        contactTitle: "Que trabalho gostaria de simplificar para a sua equipa?", contactBody: "Conte-me como funciona o processo, que ferramentas utiliza e onde surgem as dificuldades."
       }
     };
 
@@ -979,6 +1206,11 @@
       const copy = translations[languageCode];
       document.documentElement.lang = languageCode === "pt" ? "pt-PT" : "en";
       document.title = copy.pageTitle;
+      document.querySelectorAll('[data-i18n-aria]').forEach((element) => {
+        element.setAttribute('aria-label', copy[element.dataset.i18nAria]);
+      });
+      document.querySelector('meta[property="og:title"]').setAttribute('content', copy.pageTitle);
+      document.querySelector('meta[property="og:description"]').setAttribute('content', copy.pageDescription);
       document.querySelector('meta[name="description"]').setAttribute("content", copy.pageDescription);
       document.querySelectorAll("[data-i18n]").forEach((element) => {
         const value = copy[element.dataset.i18n];
@@ -1006,3 +1238,4 @@
   </script>
 </body>
 </html>
+
